@@ -1,0 +1,46 @@
+.container{
+    background-color: rgb(64, 68, 71);
+}
+.grid-container{
+    display: grid;
+    /* para darle formato al grind use: al usar nfr se acomoda y se fivide el espacio de acuerdo al espacio y las unidades  
+    grid-template-columns: 2fr 1fr; cajas flexibles 
+    grid-template-rows: 150px 1fr 2fr; la primera de 150px y las demas 
+    grid-template-rows: minmax(20px auto); se pone un minimo y lo demas depende del tamaño de la pagina, es automata 
+    grid-template-columns: repeat(3, 1fr);
+    */
+    grid-template-columns: repeat(3, 100px); 
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "header header header"; /* las primeras 3 que encuentre, seran los encambezados*/ 
+    gap: 10px;
+    justify-content: space-evenly;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.grid-item{
+    margin: 10px;
+    padding: 10px;
+    border: 10px rgb(255, 255, 255);
+    background-color: rgb(57, 180, 180);
+
+}
+
+.grid-item-1{
+    grid-area: header;
+    justify-self: end;
+}
+
+.grid-item-2{ 
+    /*
+    grid-row: 2 / 5;  se puede usan en vez de area, abarca de la linea 2 a la 5
+    grid-column: 2 / -1;*/
+    grid-row: 2 / span 2;
+    grid-column: 2;
+    align-self: center;
+    
+}
+
+.grid-item-3{
+    grid-column: 2;
+}
